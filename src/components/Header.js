@@ -1,3 +1,18 @@
+import React from 'react';
+import { View, Text } from 'react-native';
+
+const Header = ({ text }) => {
+  const { headerContainer, headerText } = styles;
+
+  return (
+    <View style={headerContainer}>
+      <Text style={headerText}>
+        {text}
+      </Text>
+    </View>
+  )
+}
+
 const styles = {
   headerContainer: {
     alignItems: 'center',
@@ -15,3 +30,5 @@ const styles = {
     fontWeight: '700'
   }
 }
+
+export default Header;
