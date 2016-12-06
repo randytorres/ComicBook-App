@@ -1,3 +1,20 @@
+import React from 'react';
+import {
+  View,
+  Text,
+  Linking,
+  Image,
+  TouchableHighlight } from 'react-native';
+import Section from './Section';
+
+const ComicContainer = ({ comic }) => {
+  return (
+    <View>
+      <Text>ComicContainer</Text>
+    </View>
+  )
+}
+
 const styles = {
  container: {
    padding: 5,
@@ -38,3 +55,5 @@ const styles = {
    borderRadius: 20
  }
 }
+
+export default ComicContainer;
