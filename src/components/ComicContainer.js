@@ -8,9 +8,39 @@ import {
 import Section from './Section';
 
 const ComicContainer = ({ comic }) => {
+  const { title, author, date, image, url } = comic;
+  const {
+    container,
+    textContainer,
+    imageStyle,
+    titleStyle,
+    smallText,
+    buttonStyle
+  } = styles;
+
   return (
-    <View>
-      <Text>ComicContainer</Text>
+    <View style={container}>
+      <Section>
+        <View>
+          <Image
+          source={{ uri: image }}
+          style={imageStyle}
+          />
+        </View>
+      </Section>
+
+      <Section style={textContainer}>
+        <View>
+          <Text style={titleStyle}>{title}</Text>
+          <Text style={smallText}>{author}</Text>
+          <Text style={smallText}>{date}</Text>
+          <TouchableHighlight
+            onPress={() => Linking.openURL(url)}
+            style={buttonStyle}>
+            <Text style={{ color: '#fff', fontWeight: '700' }}>Download</Text>
+          </TouchableHighlight>
+        </View>
+      </Section>
     </View>
   )
 }
